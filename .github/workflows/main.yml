@@ -54,22 +54,22 @@ jobs:
         if: contains(steps.changed-services.outputs.changed_services, 'question-app')
         run: |
           echo "Building and pushing Question App..."
-          docker build -t harshanasenadeera/question-app:latest ./distributed-quiz-service/question-app
-          docker push harshanasenadeera/question-app:latest
+          docker build -t dinethsankalpa/question-app:latest ./distributed-quiz-service/question-app
+          docker push dinethsankalpa/question-app:latest
 
       - name: Build and Push Submit App (if changed)
         if: contains(steps.changed-services.outputs.changed_services, 'submit-app')
         run: |
           echo "Building and pushing Submit App..."
-          docker build -t harshanasenadeera/submit-app:latest ./distributed-quiz-service/submit-app
-          docker push harshanasenadeera/submit-app:latest
+          docker build -t dinethsankalpa/submit-app:latest ./distributed-quiz-service/submit-app
+          docker push dinethsankalpa/submit-app:latest
 
       - name: Build and Push Database (if changed)
         if: contains(steps.changed-services.outputs.changed_services, 'db')
         run: |
           echo "Building and pushing Database..."
-          docker build -t harshanasenadeera/db:latest ./distributed-quiz-service/db
-          docker push harshanasenadeera/db:latest
+          docker build -t dinethsankalpa/db:latest ./distributed-quiz-service/db
+          docker push dinethsankalpa/db:latest
 
   elt-pipeline:
     name: ELT Pipeline Execution
